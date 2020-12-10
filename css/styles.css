@@ -1,0 +1,20 @@
+.video {
+    width: 70%;
+}
+
+.grafo {
+    background-color: #efefef;
+    height: 70vh;
+    position: relative;
+}
+
+.player {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.lista-nodes {
+    position: absolute;
+    bottom: 30px;
+    right: 10%;
+}

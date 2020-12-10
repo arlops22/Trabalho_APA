@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho APA</title>
+    <link href="./css/styles.css" rel="stylesheet" type="text/css">
+    <link href="css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1 class="text-center display-4 py-4 ">Busca em Largura e Busca em Profundidade</h1>
+
+    <div class="mt-4 container d-flex">
+        <form id="form" class="mr-3">
+            <h4 class="mb-4">Informações para geração do Grafo</h4>
+            <div>
+                <div class="form-check">
+                    <input checked name="tipo-grafo" class="form-check-input" id="orientado" type="radio" value="orientado">
+                    <label class="form-check-label" for="orientado">Grafo Orientado</label>
+                </div>
+    
+                <div class="form-check">
+                    <input name="tipo-grafo" class="form-check-input" id="nao-orientado" type="radio" value="nao-orientado">
+                    <label class="form-check-label" for="nao-orientado">Grafo não Orientado</label>
+                </div>
+            </div>
+
+            
+            <div class="form-group mt-2">
+                <label for="dataset">Insira os dados do grafo:</label>
+                <textarea rows="6" type="text" class="form-control" id="dataset"></textarea>
+            </div>
+            
+            
+            <div class="row mt-2"> 
+                <div class="form-group col-7">
+                    <label for="startnode">Insira o nó de início da travessia:</label>
+                    <input type="text" class="form-control" id="startnode">
+                </div>
+               
+                <div class="form-group col-5">
+                    <label for="velo">Tempo de animação:</label>
+                    <input type="text" class="form-control" id="velo">
+                </div>            
+            </div>
+
+            <button id="largura" class="btn btn-dark mt-2" type='button'>Iniciar Travessia em Largura</button>
+            <button id="profundidade" class="btn btn-dark mt-2" type='button'>Iniciar Travessia em Profundidade</button>
+        </form>
+        
+        <!--<canvas class="ml-3 grafo" id="grafo"></canvas> -->
+        <div class="video">
+            <div id="grafo" class="ml-3 grafo">
+            </div>
+            <div class="player">
+                <button id="pause" class="btn btn-dark mt-2 mb-4" type='button'><i class="fas fa-pause"></i></button>
+                <button id="reset" class="btn btn-dark mt-2 mb-4" type='button'><i class="fas fa-stop"></i></button>
+            </div>
+        </div>
+
+        <span id="lista-nodes" class="lista-nodes"></span>
+    </div>
+
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <script src='./js/index.js'></script>
+</body>
+</html>
