@@ -477,26 +477,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
 
-               
-
-                /*
-
-                let current = frontier.shift();
-
-                console.log(current)
-
-
-                console.log(frontier)
-
-                if (count - graph.nodes.length == current.neighbor.length) {
-                    graph.setNodesColor("#000", current.id - 1);
-                    console.log()
-                }
-                if(tvCount == graph.nodes.length) {
-                    console.log("contadores iguais", tvCount);
-                    count = graph.nodes.length;
-                }
-            */
             }
 
             // TESTA SE TODOS OS NÓS JÁ FORAM EXPLORADOS
@@ -528,31 +508,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(graph.animationVelo)
         graph.setAnimation(interval)
 
-        /*if (graph.getMode() == 'profundidade') {
-            graph.resetGraphColors();
-        }
-        let helper = graph.getNodeHelper();
-        
-        graph.paintGraph('#FFF');
-        console.log("Grafo completamente branco.")
-        
-        // Aplica o travessia em Largura
-        if (graph.colored) {
-
-            if (helper.indexOf(startNode.value) > -1 && graph.nodeslist[helper.indexOf(startNode.value)].color == "#FFF") {
-                graph.BFS_expand(graph.nodeslist[helper.indexOf(startNode.value)]);
-                
-            }
-            for (let i = 0; i < graph.nodeslist.length; i++) 
-            {
-                if (graph.nodeslist[i].color == "#FFF")
-                {
-                    graph.BFS_expand(graph.nodeslist[i]); 
-                }
-            }
-        }
-
-        graph.setMode('largura');*/
     });
 
     tvProfundidade.addEventListener('click', function() {
@@ -566,8 +521,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let pilha = [];
         let explored = [];
-        let pai;
-        let paiList = [];
         
         let interval = setInterval(function() {
             const helper = graph.getNodeHelper();
@@ -672,26 +625,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         explorados.innerHTML += `${current.label} `;
                     }
                 }
-
-                /*
-
-                let current = frontier.shift();
-
-                console.log(current)
-
-
-                console.log(frontier)
-
-                if (count - graph.nodes.length == current.neighbor.length) {
-                    graph.setNodesColor("#000", current.id - 1);
-                    console.log()
-                }
-                if(tvCount == graph.nodes.length) {
-                    console.log("contadores iguais", tvCount);
-                    count = graph.nodes.length;
-                }
-            */
-
             }
             
             let fim = 0;
@@ -716,39 +649,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }, graph.animationVelo);
         
         graph.setAnimation(interval)
-
-        /*if (graph.getMode() == 'largura') {
-            graph.resetGraphColors();
-        }
-
-        let helper = graph.getNodeHelper();
-
-        // Colore tudo de Branco
-        graph.paintGraph('#FFF');
-        
-        // Aplica o travessia em Largura
-        if (graph.colored) {
-
-            const stack = new Array();
-
-            if (helper.indexOf(startNode.value) > -1 && graph.nodeslist[helper.indexOf(startNode.value)].color == "#FFF") 
-            { 
-                graph.DFS_expand(graph.nodeslist[helper.indexOf(startNode.value)], stack);    
-            }
-
-            for (let i = 0; i < graph.nodeslist.length; i++) 
-            {
-                if (graph.nodeslist[i].color == "#FFF")
-                {
-                    graph.DFS_expand(graph.nodeslist[i], stack); 
-                }
-            }
-
-        }
-
-        
-        graph.setMode('profundidade');*/
-        
     });
 
     btnPause.addEventListener('click', function() {
