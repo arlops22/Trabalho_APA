@@ -492,7 +492,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("FIM", fim);
 
             if (fim == graph.nodeslist.length) {
-                explorados.innerHTML += '<br><br> FIM';
+                explorados.innerHTML += '<br> FIM';
                 exploreds = [];
                 count = 0;
                 current = 'undefined';
@@ -638,7 +638,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("FIM", fim);
 
             if (fim == graph.nodeslist.length) {
-                explorados.innerHTML += '<br><br> FIM';
+                explorados.innerHTML += '<br> FIM';
                 exploreds = [];
                 count = 0;
                 current = 'undefined';
