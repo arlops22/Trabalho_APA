@@ -651,13 +651,15 @@ document.addEventListener('DOMContentLoaded', function() {
         graph.setAnimation(interval)
     });
 
+    // FUNÇÃO QUE PAUSA A ANIMAÇÃO (NÃO ESTÁ 100% FUNCIONANDO)
+    /*
     btnPause.addEventListener('click', function() {
         velo.disabled = false;
 
         console.log("animacao:", graph.animation)
         graph.stop(graph.animation)
     })
-
+    */
     btnReset.addEventListener('click', function() {
 
         grafoNaoOrientado.disabled = false;
