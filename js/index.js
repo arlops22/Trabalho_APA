@@ -244,6 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let nodeslist = [];
     let nodeshelp = [];
     let edgelist = [];
+    let count = 0;
 
     const graph = new Graph(nodeslist, nodeshelp, edgelist);
 
@@ -412,18 +413,18 @@ document.addEventListener('DOMContentLoaded', function() {
             const helper = graph.getNodeHelper();
 
             // Pinta nós de Branco
-            if (counter < graph.nodes.length) {
+            if (count < graph.nodes.length) {
                 
-                if (typeof graph.nodes[counter].color.background == "undefined" || graph.nodes[counter].color.background == '#97C2FC') 
+                if (typeof graph.nodes[count].color.background == "undefined" || graph.nodes[count].color.background == '#97C2FC') 
                 {
-                    graph.setNodesColor("#FFF", graph.nodes[counter].id - 1)
+                    graph.setNodesColor("#FFF", graph.nodes[count].id - 1)
                 }
             }
 
             // TP Largura
-            if (counter >= graph.nodes.length && helper.indexOf(startNode.value) > -1) 
+            if (count >= graph.nodes.length && helper.indexOf(startNode.value) > -1) 
             {
-                let tvCount = counter - graph.nodes.length;
+                let tvCount = count - graph.nodes.length;
                 let current;
                 console.log(tvCount)
 
@@ -437,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     if (graph.nodeslist[tvCount].color == "#FFF") {
                         frontier.push(graph.nodeslist[tvCount]);
-                        counter = graph.nodes.length - 1; 
+                        count = graph.nodes.length - 1; 
                     }
                 }
 
@@ -468,7 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         explorados.innerHTML += `${current.label} `;
     
-                        counter = graph.nodes.length - 1;
+                        count = graph.nodes.length - 1;
                     }
                 }
 
@@ -488,7 +489,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                         explorados.innerHTML += `${current.label} `;
     
-                        counter = graph.nodes.length - 1;
+                        count = graph.nodes.length - 1;
                         tvCount--;
                     }
                 }
@@ -504,13 +505,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 console.log(frontier)
 
-                if (counter - graph.nodes.length == current.neighbor.length) {
+                if (count - graph.nodes.length == current.neighbor.length) {
                     graph.setNodesColor("#000", current.id - 1);
                     console.log()
                 }
                 if(tvCount == graph.nodes.length) {
                     console.log("contadores iguais", tvCount);
-                    counter = graph.nodes.length;
+                    count = graph.nodes.length;
                 }
             */
             }
@@ -530,16 +531,16 @@ document.addEventListener('DOMContentLoaded', function() {
             if (fim == graph.nodeslist.length) {
                 explorados.innerHTML += '<br><br> FIM';
                 exploreds = [];
-                counter = 0;
+                count = 0;
                 current = 'undefined';
                 graph.stop(interval);
             }
 
             
-            if (counter == graph.nodeslist.length && fim != graph.nodeslist.length) {
-                counter = graph.nodes.length;
+            if (count == graph.nodeslist.length && fim != graph.nodeslist.length) {
+                count = graph.nodes.length;
             }
-            counter++;
+            count++;
         }, graph.animationVelo);
         console.log(graph.animationVelo)
         graph.setAnimation(interval)
@@ -781,7 +782,7 @@ document.addEventListener('DOMContentLoaded', function() {
         startNode.disabled = false;
         velo.disabled = false;
 
-        counter = 0;
+        count = 0;
 
         graph.stop(graph.animation)
 
