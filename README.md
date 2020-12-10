@@ -9,11 +9,11 @@ Para criar as arestas basta inserir dois nós em uma linha.
 ## Exemplo de Dados de Entrada
 
 `
-BRA ARG
-BRA URU
-BRA PAR
-BRA SUR
-BRA GUI
+BRA ARG\n
+BRA URU\n
+BRA PAR\n
+BRA SUR\n
+BRA GUI\n
 BRA GFR
 BRA VEN
 BRA COL
