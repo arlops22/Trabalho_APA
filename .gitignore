@@ -1,3 +1,5 @@
+#npm file
 node_modules/
 
-/js/backup.js
+#js backup
+js/backup.js
