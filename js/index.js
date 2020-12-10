@@ -9,7 +9,6 @@ class Graph {
         this.network;
         this.animation = null;
         this.animationVelo = 1500;
-        this.timer = 0;
     }
 
     setVelo(velo) {
@@ -122,23 +121,7 @@ class Graph {
         
     }
 
-    setWhite(node) {
-        if (typeof node.color.background == "undefined") 
-        {   
-            this.setNodesColor("#FFF", node.id - 1)
-        }
-    }
-
-    resetGraphColors() {
-        
-        for(let i = 0; i < this.nodes.length; i++) {
-            this.setNodesColor("#97C2FC", this.nodes[i].id - 1)
-        }
-
-        this.colored = false;
-        console.log('Grafo resetado');
-    }
-
+    /*
     BFS_expand(nodeObj) {
 
         const frontier = new Array(nodeObj);
@@ -170,7 +153,6 @@ class Graph {
             console.log("Novos nós a serem explorados: ", frontier);
         }
     }
-
     DFS_expand(nodeObj, stack) {
 
         const graph = this;
@@ -196,7 +178,7 @@ class Graph {
         graph.setNodesColor("#000", nodeObj.id-1);
         console.log("Nó explorado: ", nodeObj);
 
-    }
+    }*/
     
 }
 
@@ -404,6 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dataset.disabled = true;
         startNode.disabled = true;
         velo.disabled = true;
+        tvProfundidade.disabled = true;
 
         let frontier = [];
         let exploreds = [];
@@ -579,6 +562,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dataset.disabled = true;
         startNode.disabled = true;
         velo.disabled = true;
+        tvLargura.disabled = true;
 
         let pilha = [];
         let explored = [];
@@ -781,6 +765,8 @@ document.addEventListener('DOMContentLoaded', function() {
         dataset.disabled = false;
         startNode.disabled = false;
         velo.disabled = false;
+        tvLargura.disabled = false;
+        tvProfundidade.disabled = false;
 
         count = 0;
 
@@ -795,10 +781,5 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Grafo resetado');
 
     })
-
-    /*
-    velo1.addEventListener('click', function() {
-        graph.setVelo(3000)
-    })*/
 
 })
